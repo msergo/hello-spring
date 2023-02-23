@@ -12,11 +12,11 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-  - name: ping
+  - name: ping-redis
     image: redis
     commands:
       - redis-cli -h 127.0.0.1 ping
 
 services:
-  - name: cache
+  - name: redis
     image: redis
